@@ -20,7 +20,7 @@ model <-keras_model_sequential() %>%
   layer_max_pooling_1d(pool_size = 5) %>% 
   layer_conv_1d(filters = 32, kernel_size = 7, activation = "relu") %>% 
   layer_global_max_pooling_1d() %>% 
-  layer_dense(units=1)
+  layer_dense(units=1, kernel_regularizer = regularizer_l2(l=0.002))
 
 callbacks_list<-list(
   callback_early_stopping(
@@ -41,7 +41,7 @@ callbacks_list<-list(
 )
 
 model %>%  compile(
-  optimizer= "rmsprop",
+  optimizer= optimizer_rmsprop(lr=1e-3),
   loss="binary_crossentropy",
   metrics=c("acc")
 )
@@ -53,6 +53,8 @@ history<- model %>%  fit(
   validation_split=0.2,
   callbacks=callbacks_list
 )
+
+# jezeli model jest odpowiedno dostrojony to mozemy go uruchomic na wszystkich danych 
 
 model %>%  fit(
   x_train, y_train,
