@@ -6,15 +6,15 @@
 
 ## podstawowe informacje
 
-1)  model jest oparty na sieci konwolucyjnej jednowymiarowej, wykonany za pomoc¹ biblioteki keras
+1)  model jest oparty na sieci konwolucyjnej jednowymiarowej, wykonany za pomoca biblioteki keras
 
-2)  w celu maksymalizacji dokladnosci klasyfikacji i zwalczenia tzw. nadmiernego dopasowania *wykorzystanu nastêpujace metody:*
+2)  w celu maksymalizacji dokladnosci klasyfikacji i zwalczenia tzw. nadmiernego dopasowania *wykorzystano nastÄ™pujace metody:*
 
 -   wartswy embedding w modelu
 
--   po³aczenie sieci konwolucyjnej jednowymiarowej oraz gêstej sieci neuronowej
+-   poÅ‚aczenie sieci konwolucyjnej jednowymiarowej oraz gÄ™stej sieci neuronowej
 
--   wywo³ania zwrotne
+-   wywoÅ‚ania zwrotne
 
 3)  jako optymalizator modelu posluzono sie wskaznikiem - rmsprop
 
